@@ -1,11 +1,6 @@
-from generating_characteristics import generate
-from class_selection import choose_class
+from create_character import Character
 
 
-characteristics = generate()
-character_class = choose_class(characteristics)
-while character_class is None:
-    characteristics = generate()
-    character_class = choose_class(characteristics)
-print(characteristics)
-print(character_class.NAME)
+level = int(input("Уровень: "))
+character = Character(level)
+print(*character.get_information())

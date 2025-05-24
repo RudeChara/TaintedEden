@@ -2,7 +2,9 @@ from dnd_class import DnDClass
 
 
 class Monk(DnDClass):
-    NAME = "Монах"
-
-    def get_conditions(self):
-        return [1, 4, [None, None, None, None]]
+    def __init__(self):
+        super().__init__()
+        self.name = "Монах"
+        self.conditions = [1, 4]
+        self.subclasses = [("Воин милосердия", None), ("Воин открытой ладони", None), ("Воин стихий", None),
+                           ("Воин теней", None)]

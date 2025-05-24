@@ -2,7 +2,9 @@ from dnd_class import DnDClass
 
 
 class Rogue(DnDClass):
-    NAME = "Плут"
-
-    def get_conditions(self):
-        return [1, [3, None, 3, None]]
+    def __init__(self):
+        super().__init__()
+        self.name = "Плут"
+        self.conditions = [1]
+        self.subclasses = [("Вор", 3), ("Клинок душ", None), ("Мистический ловкач", 3),
+                           ("Убийца", None)]
