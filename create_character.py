@@ -1,6 +1,7 @@
 from random import choice
 
 from generate_characteristics import generate
+from type_selection import select
 from dnd_classes.barbarian import Barbarian
 from dnd_classes.warlock import Warlock
 from dnd_classes.monk import Monk
@@ -33,6 +34,12 @@ class Character:
                 elif characteristics[self.subclass[1]] >= 14:
                     self.characteristics = characteristics
 
+        self.type_of_creature = select()
+
     def get_information(self):
-        return self.character_class.name, self.subclass[0], self.characteristics
+        if self.subclass is None:
+            return (self.character_class.name, self.characteristics, self.type_of_creature[0],
+                    self.type_of_creature[1](self.level))
+        return (self.character_class.name, self.subclass[0], self.characteristics, self.type_of_creature[0],
+                self.type_of_creature[1](self.level))
 
