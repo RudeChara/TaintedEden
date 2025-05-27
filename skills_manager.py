@@ -2,6 +2,7 @@ from random import choice
 
 
 skills = []
+instrumental_skills = []
 
 
 def add_skill(roster=None):
@@ -17,5 +18,27 @@ def add_skill(roster=None):
     return skill
 
 
+def add_instrumental_skill(roster=None):
+    if roster is None:
+        roster = ["Инструменты алхимика", "Инструменты гончара", "Инструменты каллиграфа", "Инструменты каменщика",
+                  "Инструменты картографа", "Инструменты кожевника", "Инструменты кузнеца", " Инструменты пивовара",
+                  "Инструменты плотника", "Инструменты повара", "Инструменты резчика по дереву",
+                  "Инструменты ремонтника", "Инструменты сапожника", "Инструменты стеклодува", "Инструменты ткача",
+                  "Инструменты художника ", "Инструменты ювелира", "Воровские инструменты",
+                  "Инструменты навигатора", "Набор для маскировки", "Набор для фальсификации", "Набор отравителя",
+                  " Набор травника"] * 20
+        roster.extend(["Игровой набор: " + item for item in ["игральные кости", "драконьи шахматы", "игральные карты",
+                                                             "ставка трёх драконов"]] * 5)
+        roster.extend(["Музыкальный инструмент: " + item for item in ["волынка", "барабан", "цимбалы", "флейта",
+                                                                      "рожок", "лютня", "лира", "свирель", "шалмей",
+                                                                      "виола"]] * 2)
+
+    skill = choice(roster)
+    while skill in instrumental_skills:
+        skill = choice(roster)
+    instrumental_skills.append(skill)
+    return skill
+
+
 def return_skills():
-    return skills
+    return skills, instrumental_skills

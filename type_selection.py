@@ -75,10 +75,10 @@ def elf(level):
     return abilities
 
 
-types_of_creatures = [("Аасимар", aasimar), ("Голиаф", goliath), ("Драконорождённый", dragonborn), ("Орк", orc),
+types_of_character = [("Аасимар", aasimar), ("Голиаф", goliath), ("Драконорождённый", dragonborn), ("Орк", orc),
                       ("Тифлинг", tiefling), ("Человек", human), ("Эльф", elf)]
 
 
 def select():
-    return choice(types_of_creatures)
+    return choice(types_of_character)
 
